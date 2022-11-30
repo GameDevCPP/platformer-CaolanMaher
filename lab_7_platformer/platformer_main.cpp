@@ -10,5 +10,6 @@ Level2Scene level2;
 Level3Scene level3;
 
 int main() {
+    cout << "STARTING" << endl;
   Engine::Start(1280, 720, "Platformer",&menu);
 }
