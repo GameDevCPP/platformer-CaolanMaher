@@ -35,7 +35,7 @@ void Loading_render() {
   octagon.setRotation(degrees(loadingspinner));
   octagon.setPosition(Vcast<float>(Engine::getWindowSize()) * .5f);
   octagon.setFillColor(Color(255,255,255,min(255.f,40.f*loadingTime)));
-  static Text t("Loading", *Resources::get<sf::Font>("RobotoMono-Regular.ttf"));
+  static Text t("Loading", *Resources::get<sf::Font>("../../res/fonts/RobotoMono-Regular.ttf"));
   t.setFillColor(Color(255,255,255,min(255.f,40.f*loadingTime)));
   t.setPosition(Vcast<float>(Engine::getWindowSize()) * Vector2f(0.4f,0.3f));
   Renderer::queue(&t);
@@ -81,7 +81,7 @@ void Engine::Render(RenderWindow& window) {
 
 void Engine::Start(unsigned int width, unsigned int height,
                    const std::string& gameName, Scene* scn) {
-  RenderWindow window(VideoMode(width, height), gameName);
+  RenderWindow window(VideoMode({width, height}), gameName);
   _gameName = gameName;
   _window = &window;
   Renderer::initialise(window);
